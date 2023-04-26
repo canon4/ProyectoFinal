@@ -15,6 +15,7 @@ public class Carta {
     private String nombre;
     private double ataque;
     private double defensa;
+    private double vida;
     private String tipo;
     private ImageIcon imagen;
     private String descripcion;
@@ -77,4 +78,13 @@ public class Carta {
         this.descripcion = descripcion;
     }
 
+    public double getVida() {
+        return vida;
+    }
+
+    public void setVida(double vida) {
+        this.vida = vida;
+    }
+     
+    
 }
