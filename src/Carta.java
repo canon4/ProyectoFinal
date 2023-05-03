@@ -85,6 +85,6 @@ public class Carta {
     public void setVida(double vida) {
         this.vida = vida;
     }
-     
+    
     
 }
