@@ -1,28 +1,13 @@
 
-import javax.swing.ImageIcon;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Diego Canon
- */
 public class Mago extends Carta{
     private int manaActual;
-    private double ataqueBasico;
-    private double ataqueEspecial;
-    private double ataquepotenciado;
+//    private double ataqueBasico;
+//    private double ataqueEspecial;
+//    private double ataquepotenciado;
 
-    public Mago(int manaActual, double ataqueBasico, double ataqueEspecial, double ataquepotenciado, String nombre, double ataque, double defensa, double vida, String tipo, ImageIcon imagen, String descripcion) {
-        super(nombre, ataque, defensa, tipo, imagen, descripcion);
-        this.manaActual = manaActual;
-        this.ataqueBasico = ataqueBasico;
-        this.ataqueEspecial = ataqueEspecial;
-        this.ataquepotenciado = ataquepotenciado;
+    public Mago() {
+        super("Arin", 10, 20, "Mago");
+        this.manaActual = 200;
         
     }
 
@@ -33,47 +18,9 @@ public class Mago extends Carta{
     public void setManaActual(int manaActual) {
         this.manaActual = manaActual;
     }
-
-    public double getAtaqueBasico() {
-        return ataqueBasico;
-    }
-
-    public void setAtaqueBasico(double ataqueBasico) {
-        this.ataqueBasico = ataqueBasico;
-    }
-
-    public double getAtaqueEspecial() {
-        return ataqueEspecial;
-    }
-
-    public void setAtaqueEspecial(double ataqueEspecial) {
-        this.ataqueEspecial = ataqueEspecial;
-    }
-
-    public double getAtaquepotenciado() {
-        return ataquepotenciado;
-    }
-
-    public void setAtaquepotenciado(double ataquepotenciado) {
-        this.ataquepotenciado = ataquepotenciado;
-    }
-
-    public void setAtaque(double ataque) {
-        if (ataque < 0) {
-            ataque = 0;
-        }
-        super.setAtaque(ataque);
-    }
-
-    public void recibirDanio(double danio) {
-        vida -= danio;
-        if (vida < 0) {
-            vida = 0;
-        }
-    }
-
+    
     public void ataqueBasico() {
-        setManaActual(getManaActual()); // El ataque básico no gasta mana
+         // El ataque básico no gasta mana
         double danio = 15;
         setAtaque(getAtaque() + danio);
     }
@@ -93,4 +40,16 @@ public class Mago extends Carta{
         double danioExtra = getAtaque() * 2;
         setAtaque(getAtaque() + danioExtra);
     }
+    @Override
+    public String mostrarInformacion(){
+        return "Descripcion: " + getDescripcion()
+                + "\nNombre: " + getNombre()
+                + "\nAtaque: " + getAtaque()
+                + "\nDefensa: " + getDefensa()
+                + "\nTipo: " + getTipo()
+                + "\nVida: " + getVida()
+                + "\nMna: " + getManaActual();
+       
+    }
+
 }

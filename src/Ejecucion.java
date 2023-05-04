@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Diego Canon
- */
+import javax.swing.JOptionPane;
 public class Ejecucion extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Ejecucion
-     */
+    
+    
     public Ejecucion() {
+        
         initComponents();
         setSize(1280, 800);
+        PanelPersonajes.setVisible(false);
+        PanelDeInicio.setVisible(true);
+        PanelDeJuego.setVisible(false);
     }
 
     /**
@@ -28,9 +21,28 @@ public class Ejecucion extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelPersonajes = new javax.swing.JPanel();
-        JArqueto = new javax.swing.JButton();
-        JCaballero = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        JBClerigo = new javax.swing.JButton();
+        JBPaladin = new javax.swing.JButton();
+        JBArquero = new javax.swing.JButton();
+        JBMago = new javax.swing.JButton();
+        BotonCaballero = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        JLCarta1 = new javax.swing.JLabel();
+        JLCarte2 = new javax.swing.JLabel();
+        JLCarta3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        Comenzar = new javax.swing.JButton();
+        atras = new javax.swing.JButton();
+        PanelDeInicio = new javax.swing.JPanel();
+        BotonInicio = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        PanelDeJuego = new javax.swing.JPanel();
+        atrasPP = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 800));
@@ -40,68 +52,258 @@ public class Ejecucion extends javax.swing.JFrame {
         PanelPersonajes.setPreferredSize(new java.awt.Dimension(1280, 800));
         PanelPersonajes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JArqueto.setBackground(new java.awt.Color(0, 102, 102));
-        JArqueto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen arquero (1).png"))); // NOI18N
-        JArqueto.setPreferredSize(new java.awt.Dimension(40, 18));
-        JArqueto.addActionListener(new java.awt.event.ActionListener() {
+        JBClerigo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diego Canon\\Documents\\NetBeansProjects\\ProyectoFinal\\Imagenes\\imagen clerigo.png")); // NOI18N
+        JBClerigo.setMaximumSize(new java.awt.Dimension(16, 16));
+        JBClerigo.setPreferredSize(new java.awt.Dimension(240, 160));
+        JBClerigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JArquetoActionPerformed(evt);
+                JBClerigoActionPerformed(evt);
             }
         });
-        PanelPersonajes.add(JArqueto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 160, 240));
+        PanelPersonajes.add(JBClerigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 50, 160, 240));
 
-        JCaballero.setBackground(new java.awt.Color(0, 102, 102));
-        JCaballero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen arquero (1).png"))); // NOI18N
-        JCaballero.setPreferredSize(new java.awt.Dimension(40, 18));
-        JCaballero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCaballeroActionPerformed(evt);
-            }
-        });
-        PanelPersonajes.add(JCaballero, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 160, 240));
+        JBPaladin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diego Canon\\Documents\\NetBeansProjects\\ProyectoFinal\\Imagenes\\imagen paladin.png")); // NOI18N
+        JBPaladin.setToolTipText("");
+        JBPaladin.setMaximumSize(new java.awt.Dimension(16, 16));
+        JBPaladin.setPreferredSize(new java.awt.Dimension(240, 160));
+        PanelPersonajes.add(JBPaladin, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 50, 160, 240));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        JBArquero.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diego Canon\\Documents\\NetBeansProjects\\ProyectoFinal\\Imagenes\\imagen arquero.png")); // NOI18N
+        JBArquero.setMaximumSize(new java.awt.Dimension(16, 16));
+        JBArquero.setPreferredSize(new java.awt.Dimension(240, 160));
+        JBArquero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                JBArqueroActionPerformed(evt);
             }
         });
-        PanelPersonajes.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 180, -1, -1));
+        PanelPersonajes.add(JBArquero, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 160, 240));
+
+        JBMago.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diego Canon\\Documents\\NetBeansProjects\\ProyectoFinal\\Imagenes\\imagen mago.png")); // NOI18N
+        JBMago.setMaximumSize(new java.awt.Dimension(16, 16));
+        JBMago.setPreferredSize(new java.awt.Dimension(240, 160));
+        JBMago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBMagoActionPerformed(evt);
+            }
+        });
+        PanelPersonajes.add(JBMago, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 370, 160, 240));
+
+        BotonCaballero.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diego Canon\\Documents\\NetBeansProjects\\ProyectoFinal\\Imagenes\\imagen caballero.png")); // NOI18N
+        BotonCaballero.setText("");
+        BotonCaballero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCaballeroActionPerformed(evt);
+            }
+        });
+        PanelPersonajes.add(BotonCaballero, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 150, 240));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Cartas Seleccionadas");
+        PanelPersonajes.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
+
+        jLabel2.setBackground(new java.awt.Color(102, 255, 204));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Mago");
+        jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 204, 204), null, null));
+        PanelPersonajes.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 630, 80, 20));
+
+        jLabel3.setBackground(new java.awt.Color(102, 255, 204));
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Caballero");
+        jLabel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 204, 204), null, null));
+        PanelPersonajes.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 80, 20));
+
+        jLabel4.setBackground(new java.awt.Color(102, 255, 204));
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Paladin");
+        jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 204, 204), null, null));
+        PanelPersonajes.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 80, 20));
+
+        jLabel5.setBackground(new java.awt.Color(102, 255, 204));
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Clerigo");
+        jLabel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 204, 204), null, null));
+        PanelPersonajes.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 310, 80, 20));
+
+        jLabel6.setBackground(new java.awt.Color(102, 255, 204));
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Arquero");
+        jLabel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 204, 204), null, null));
+        PanelPersonajes.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 620, 80, 20));
+
+        JLCarta1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        JLCarta1.setForeground(new java.awt.Color(0, 0, 0));
+        JLCarta1.setText("VACIO");
+        PanelPersonajes.add(JLCarta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 120, 40));
+
+        JLCarte2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        JLCarte2.setForeground(new java.awt.Color(0, 0, 0));
+        JLCarte2.setText("VACIO");
+        PanelPersonajes.add(JLCarte2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 130, 40));
+
+        JLCarta3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        JLCarta3.setForeground(new java.awt.Color(0, 0, 0));
+        JLCarta3.setText("VACIO");
+        PanelPersonajes.add(JLCarta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 140, 40));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Seleciana una carta");
+        PanelPersonajes.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        Comenzar.setText("Comenzar");
+        Comenzar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComenzarActionPerformed(evt);
+            }
+        });
+        PanelPersonajes.add(Comenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 180, 60));
+
+        atras.setText("Atras");
+        atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasActionPerformed(evt);
+            }
+        });
+        PanelPersonajes.add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        BotonInicio.setText("Inicio");
+        BotonInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonInicioActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Bradley Hand ITC", 1, 48)); // NOI18N
+        jLabel7.setText("Guerra de cartas");
+
+        javax.swing.GroupLayout PanelDeInicioLayout = new javax.swing.GroupLayout(PanelDeInicio);
+        PanelDeInicio.setLayout(PanelDeInicioLayout);
+        PanelDeInicioLayout.setHorizontalGroup(
+            PanelDeInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDeInicioLayout.createSequentialGroup()
+                .addGroup(PanelDeInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelDeInicioLayout.createSequentialGroup()
+                        .addGap(380, 380, 380)
+                        .addComponent(BotonInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelDeInicioLayout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addComponent(jLabel7)))
+                .addContainerGap(623, Short.MAX_VALUE))
+        );
+        PanelDeInicioLayout.setVerticalGroup(
+            PanelDeInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDeInicioLayout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(jLabel7)
+                .addGap(68, 68, 68)
+                .addComponent(BotonInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(422, Short.MAX_VALUE))
+        );
+
+        PanelDeJuego.setPreferredSize(new java.awt.Dimension(1280, 800));
+
+        atrasPP.setText("Atras");
+        atrasPP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasPPActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelDeJuegoLayout = new javax.swing.GroupLayout(PanelDeJuego);
+        PanelDeJuego.setLayout(PanelDeJuegoLayout);
+        PanelDeJuegoLayout.setHorizontalGroup(
+            PanelDeJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDeJuegoLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(atrasPP)
+                .addContainerGap(1172, Short.MAX_VALUE))
+        );
+        PanelDeJuegoLayout.setVerticalGroup(
+            PanelDeJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDeJuegoLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(atrasPP)
+                .addContainerGap(734, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelPersonajes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+            .addComponent(PanelPersonajes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PanelDeInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PanelDeJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelPersonajes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 15, Short.MAX_VALUE))
+            .addComponent(PanelPersonajes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PanelDeInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PanelDeJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void JArquetoActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        System.out.println("Arquero");
-    }                                        
+    private void BotonInicioActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       PanelDeInicio.setVisible(false);
+       PanelPersonajes.setVisible(true);
+    }                                           
 
-    private void JCaballeroActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+    private void BotonCaballeroActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        ventanaDeOpciones(1);
+        
+    }                                              
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void JBClerigoActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        ventanaDeOpciones(3);
+    }                                         
+
+    private void JBArqueroActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        ventanaDeOpciones(4);
+    }                                         
+
+    private void JBMagoActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        ventanaDeOpciones(5);
+    }                                      
+
+    private void ComenzarActionPerformed(java.awt.event.ActionEvent evt) {                                         
         PanelPersonajes.setVisible(false);
+        PanelDeJuego.setVisible(true);
     }                                        
 
-    /**
-     * @param args the command line arguments
-     */
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {                                      
+       PanelPersonajes.setVisible(false);
+       PanelDeInicio.setVisible(true);
+    }                                     
+
+    private void atrasPPActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        PanelDeJuego.setVisible(false);
+        PanelPersonajes.setVisible(true);
+    }                                       
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -133,11 +335,58 @@ public class Ejecucion extends javax.swing.JFrame {
             }
         });
     }
+    public static Jugador J1 = new Jugador("paco", true);
+//    public static int getPosicion;
+    
+    public static Carta crearCarta(int x){
+        switch(x){
+            case 1:
+                return new Caballero();
+            case 2:
+            case 3:
+                return new Clerigo();
+            case 4:
+                return new Arquero();
+            case 5:
+                return new Mago();
+            case 6:
+        }
+        return null;
+    }
+    public static Object Op []= new Object[] {"Agregar al mazo", "Cancelar"};
+    public static void ventanaDeOpciones(int tipoCarta){
+        int x = JOptionPane.showOptionDialog(null, crearCarta(tipoCarta).mostrarInformacion(), "Seleccionar Carta", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null , Op, Op[0]);
+        if (x == 1 ) {
+            J1.agregarCartas(crearCarta(tipoCarta));
+        }
+    }
+    public void mostrarMazo(){
+        
+    }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton JArqueto;
-    private javax.swing.JButton JCaballero;
+    private javax.swing.JButton BotonCaballero;
+    private javax.swing.JButton BotonInicio;
+    private javax.swing.JButton Comenzar;
+    private javax.swing.JButton JBArquero;
+    private javax.swing.JButton JBClerigo;
+    private javax.swing.JButton JBMago;
+    private javax.swing.JButton JBPaladin;
+    private javax.swing.JLabel JLCarta1;
+    private javax.swing.JLabel JLCarta3;
+    private javax.swing.JLabel JLCarte2;
+    private javax.swing.JPanel PanelDeInicio;
+    private javax.swing.JPanel PanelDeJuego;
     private javax.swing.JPanel PanelPersonajes;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton atras;
+    private javax.swing.JButton atrasPP;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration                   
 }

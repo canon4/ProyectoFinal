@@ -17,16 +17,16 @@ public class Carta {
     private double defensa;
     private double vida;
     private String tipo;
-    private ImageIcon imagen;
+
     private String descripcion;
 
-    public Carta(String nombre, double ataque, double defensa, String tipo, ImageIcon imagen, String descripcion) {
+    public Carta(String nombre, double ataque, double defensa, String tipo) {
         this.nombre = nombre;
         this.ataque = ataque;
         this.defensa = defensa;
         this.tipo = tipo;
-        this.imagen = imagen;
-        this.descripcion = descripcion;
+
+       
     }
     
 
@@ -62,13 +62,6 @@ public class Carta {
         this.tipo = tipo;
     }
 
-    public ImageIcon getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(ImageIcon imagen) {
-        this.imagen = imagen;
-    }
 
     public String getDescripcion() {
         return descripcion;
@@ -85,6 +78,25 @@ public class Carta {
     public void setVida(double vida) {
         this.vida = vida;
     }
+
+    @Override
+    public String toString() {
+        return "Carta{" + "nombre=" + nombre + ", ataque=" + ataque + ", defensa=" + defensa + ", vida=" + vida + ", tipo=" + tipo + ", descripcion=" + descripcion + '}';
+    }
     
+    public String mostrarInformacion(){
+         return "Descripcion: " + getDescripcion()
+                + "\nNombre: " + getNombre()
+                + "\nAtaque: " + getAtaque()
+                + "\nDefensa: " + getDefensa()
+                + "\nTipo: " + getTipo()
+                + "\nVida: " + getVida();
+    }
+       public void recibirDanio(double danio) {
+        vida -= danio;
+        if (vida < 0) {
+            vida = 0;
+        }
+    }
     
 }

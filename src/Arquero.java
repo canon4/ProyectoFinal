@@ -1,36 +1,10 @@
 
-import javax.swing.ImageIcon;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Diego Canon
- */
 public class Arquero extends Carta{
-     private double vida = 130;
     private double mana = 210;
-    private double ataqueBásico;
-    private double ataqueConPenetracion;
-    private double ataqueDevasstador;
 
-    public Arquero(double ataqueBásico, double ataqueConPenetracion, double ataqueDevasstador, String nombre, double ataque, double defensa, double vida, String tipo, ImageIcon imagen, String descripcion) {
-        super(nombre, ataque, defensa, tipo, imagen, descripcion);
-        this.ataqueBásico = ataqueBásico;
-        this.ataqueConPenetracion = ataqueConPenetracion;
-        this.ataqueDevasstador = ataqueDevasstador;
-    }
-
-    public double getVida() {
-        return vida;
-    }
-
-    public void setVida(double vida) {
-        this.vida = vida;
+    public Arquero() {
+        super("Lyra", 10, 10, "Arquero");
+        
     }
 
     public double getMana() {
@@ -41,29 +15,7 @@ public class Arquero extends Carta{
         this.mana = mana;
     }
 
-    public double getAtaqueBásico() {
-        return ataqueBásico;
-    }
-
-    public void setAtaqueBásico(double ataqueBásico) {
-        this.ataqueBásico = ataqueBásico;
-    }
-
-    public double getAtaqueConPenetracion() {
-        return ataqueConPenetracion;
-    }
-
-    public void setAtaqueConPenetracion(double ataqueConPenetracion) {
-        this.ataqueConPenetracion = ataqueConPenetracion;
-    }
-
-    public double getAtaqueDevasstador() {
-        return ataqueDevasstador;
-    }
-
-    public void setAtaqueDevasstador(double ataqueDevasstador) {
-        this.ataqueDevasstador = ataqueDevasstador;
-    }
+    
 
     public void ataqueBasico(Carta objetivo) {
         double danio = 40;
@@ -90,5 +42,16 @@ public class Arquero extends Carta{
         } else {
             System.out.println("No tienes suficiente mana para este ataque");
         }
+    }
+    
+    @Override
+    public String mostrarInformacion(){
+        return "Descripcion: " + getDescripcion()
+                + "\nNombre: " + getNombre()
+                + "\nAtaque: " + getAtaque()
+                + "\nDefensa: " + getDefensa()
+                + "\nTipo: " + getTipo()
+                + "\nVida: " + getVida()
+                + "\nMana; " + getMana();
     }
 }

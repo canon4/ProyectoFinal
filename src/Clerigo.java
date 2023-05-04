@@ -12,18 +12,19 @@ import javax.swing.ImageIcon;
  * @author Diego Canon
  */
 public class Clerigo extends Carta{
-    private double vida = 220;
-    private double mana = 230;
-    private double ataqueBasico = 34;
+    private double mana;
+    private double ataqueBasico;
 
-    public Clerigo(String nombre, double ataque, double defensa, double vida, String tipo, ImageIcon imagen, String descripcion) {
-        super(nombre, ataque, defensa, tipo, imagen, descripcion);
+    public Clerigo() {
+        super("Lirien", 10, 20, "Clerigo");
+        this.mana = 200;
+  
     }
 
-    public void curarPersonaje() {
+    public void autoCuracion() {
         if (this.mana >= 100) {
-            this.vida += this.vida * 0.5; // Devuelve el 50% de la vida
-            this.mana -= 100; // Resta 100 de mana
+            this.setVida(this.getVida() * 0.5); // Devuelve el 50% de la vida
+            this.mana -= 75; // Resta 100 de mana
         } else {
             System.out.println("No tienes suficiente mana para realizar esta acción.");
         }
@@ -52,15 +53,6 @@ public class Clerigo extends Carta{
             System.out.println("No tienes suficiente mana para realizar esta acción.");
         }
     }
-
-    public double getVida() {
-        return this.vida;
-    }
-
-    public void setVida(double vida) {
-        this.vida = vida;
-    }
-
     public double getMana() {
         return this.mana;
     }
@@ -76,4 +68,15 @@ public class Clerigo extends Carta{
     public void setAtaqueBasico(double ataqueBasico) {
         this.ataqueBasico = ataqueBasico;
     }
+    @Override
+    public String mostrarInformacion(){
+        return "Descripcion: " + getDescripcion()
+                + "\nNombre: " + getNombre()
+                + "\nAtaque: " + getAtaque()
+                + "\nDefensa: " + getDefensa()
+                + "\nTipo: " + getTipo()
+                + "\nVida: " + getVida()
+                + "\nMana: " + getMana();
+    }
+    
 }
